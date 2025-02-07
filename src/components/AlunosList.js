@@ -8,7 +8,7 @@ const AlunoList = ({ alunos, onEdit, onDelete }) => {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Nome</th>
+            <th>Name</th>
             <th>Email</th>
             <th>Telefone</th>
             <th>Ações</th>
