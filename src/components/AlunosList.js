@@ -1,31 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from "react";
 
-function AlunosList() {
-  const [alunos, setAlunos] = useState([]);
-  const [error, setError] = useState(null);
-
-	useEffect(() => {
-	  axios.get('/api/alunos')
-	    .then((response) => setAlunos(response.data))
-	    .catch((error) => setError(error.message));
-	}, []);
-
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
+const AlunoList = ({ alunos, onEdit, onDelete }) => {
   return (
-    <ul>
-      {alunos.map((aluno) => (
-        <li key={aluno.id}>
-          {aluno.nome} - {aluno.idade} - {aluno.curso}
-        </li>
-      ))}
-    </ul>
+    <div>
+      <h2>Lista de Alunos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {alunos.map((aluno) => (
+            <tr key={aluno.id}>
+              <td>{aluno.id}</td>
+              <td>{aluno.name}</td>
+              <td>{aluno.email}</td>
+              <td>{aluno.phone}</td>
+              <td>
+                <button onClick={() => onEdit(aluno)}>Editar</button>
+                <button onClick={() => onDelete(aluno.id)}>Excluir</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
-}
+};
 
-export default AlunosList;
-
+export default AlunoList;
