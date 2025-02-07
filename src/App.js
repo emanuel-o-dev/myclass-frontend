@@ -23,22 +23,21 @@ function App() {
     fetchAlunos();
   }, []);
 
-  const handleCreateOrUpdateAluno = async (aluno) => {
-    try {
-      if (currentAluno) {
-        // Atualizar aluno
-        await axios.put(`/api/alunos/${currentAluno.id}`, aluno);
-        console.log(aluno)
-      } else {
-        // Criar aluno
-        await axios.post("/api/alunos", aluno);
-      }
-      setCurrentAluno(null); // Limpa a edição atual
-      fetchAlunos(); // Atualiza a lista de alunos
-    } catch (error) {
-      console.error("Erro ao salvar aluno", error);
+ const handleCreateOrUpdateAluno = async (aluno) => {
+  try {
+    console.log("Aluno enviado:", aluno);
+    if (currentAluno) {
+      await axios.put(`/api/alunos/${currentAluno.id}`, aluno);
+    } else {
+      await axios.post("/api/alunos", aluno);
     }
-  };
+    setCurrentAluno(null); 
+    fetchAlunos();
+  } catch (error) {
+    console.error("Erro ao salvar aluno", error);
+  }
+};
+
 
   const handleEditAluno = (aluno) => {
     setCurrentAluno(aluno);
