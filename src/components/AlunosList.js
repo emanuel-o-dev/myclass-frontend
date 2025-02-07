@@ -8,9 +8,11 @@ const AlunoList = ({ alunos, onEdit, onDelete }) => {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Nome</th>
             <th>Email</th>
             <th>Telefone</th>
+            <th>Nota</th>
+            <th>Data de Criação</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -21,6 +23,8 @@ const AlunoList = ({ alunos, onEdit, onDelete }) => {
               <td>{aluno.name}</td>
               <td>{aluno.email}</td>
               <td>{aluno.phone}</td>
+              <td>{aluno.grade !== null ? aluno.grade.toFixed(1) : "N/A"}</td>
+              <td>{new Date(aluno.created_at).toLocaleString("pt-BR")}</td>
               <td>
                 <button onClick={() => onEdit(aluno)}>Editar</button>
                 <button onClick={() => onDelete(aluno.id)}>Excluir</button>
