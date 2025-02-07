@@ -28,6 +28,7 @@ function App() {
       if (currentAluno) {
         // Atualizar aluno
         await axios.put(`/api/alunos/${currentAluno.id}`, aluno);
+        console.log(aluno)
       } else {
         // Criar aluno
         await axios.post("/api/alunos", aluno);
