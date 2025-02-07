@@ -26,7 +26,7 @@ const AlunoForm = ({ onSave, currentAluno }) => {
       <h2>{currentAluno ? "Editar Aluno" : "Adicionar Aluno"}</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Nome</label>
+          <label>Name</label>
           <input
             type="text"
             value={name}
