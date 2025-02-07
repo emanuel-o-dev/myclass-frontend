@@ -6,7 +6,7 @@ function AlunosList() {
   const [error, setError] = useState(null);
 
 	useEffect(() => {
-	  axios.get('https://backend:3000/alunos')
+	  axios.get('/api/alunos')
 	    .then((response) => setAlunos(response.data))
 	    .catch((error) => setError(error.message));
 	}, []);
