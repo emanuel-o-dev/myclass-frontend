@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AlunoList from "./components/AlunosList";
 import AlunoForm from "./components/AlunoForm";
+import './style.css';
+
 
 function App() {
   const [alunos, setAlunos] = useState([]);
