@@ -10,7 +10,7 @@ function App() {
   // Carregar os alunos do backend
   const fetchAlunos = async () => {
     try {
-      const response = await axios.get("https://your-backend-url/alunos");
+      const response = await axios.get("https://backend:3000/alunos");
       setAlunos(response.data);
     } catch (error) {
       console.error("Erro ao buscar alunos", error);
@@ -25,10 +25,10 @@ function App() {
     try {
       if (currentAluno) {
         // Atualizar aluno
-        await axios.put(`https://your-backend-url/alunos/${currentAluno.id}`, aluno);
+        await axios.put(`https://backend:3000/alunos/${currentAluno.id}`, aluno);
       } else {
         // Criar aluno
-        await axios.post("https://your-backend-url/alunos", aluno);
+        await axios.post("https://backend:3000/alunos", aluno);
       }
       setCurrentAluno(null); // Limpa a edição atual
       fetchAlunos(); // Atualiza a lista de alunos
@@ -43,7 +43,7 @@ function App() {
 
   const handleDeleteAluno = async (id) => {
     try {
-      await axios.delete(`https://your-backend-url/alunos/${id}`);
+      await axios.delete(`https://backend:3000/alunos/${id}`);
       fetchAlunos(); // Atualiza a lista após exclusão
     } catch (error) {
       console.error("Erro ao excluir aluno", error);
