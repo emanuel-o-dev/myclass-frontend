@@ -1,46 +1,115 @@
-/* Estilo geral */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  margin: 0;
-  padding: 0;
+/* Container principal */
+.App {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffffd9;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Logo */
+.App img {
+  margin-bottom: 20px;
+  max-height: 100px;
 }
 
 /* Título */
 h1 {
   text-align: center;
-  color: #333;
-  margin-top: 20px;
+  color: #2c3e50;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Formulário */
+form {
+  margin: 20px auto 40px auto; /* mais espaço embaixo para separar do botão */
+  width: 100%;
+  max-width: 600px;
+  background: #fdfdfd;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+form div {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+form label {
+  font-weight: 600;
+  color: #444;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+form input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Botão principal do form */
+form button {
+  margin-top: 15px; /* afasta o botão dos campos */
+  width: 100%;
+  padding: 12px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #388e3c;
 }
 
 /* Tabela */
 table {
-  width: 80%;
-  margin: 20px auto;
+  width: 100%;
+  margin: 30px auto;
   border-collapse: collapse;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
 }
 
 th, td {
-  padding: 12px 15px;
+  padding: 14px 18px;
   text-align: left;
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
 }
 
 th {
-  background-color: #4CAF50;
+  background: #4CAF50;
   color: white;
   text-transform: uppercase;
+  font-size: 14px;
   letter-spacing: 1px;
 }
 
-td {
-  background-color: #f9f9f9;
+tr:nth-child(even) td {
+  background: #f9f9f9;
 }
 
 tr:hover td {
-  background-color: #f1f1f1;
+  background: #f1f8f4;
 }
 
 /* Botões */
@@ -49,65 +118,19 @@ button {
   color: white;
   border: none;
   padding: 8px 12px;
-  margin: 0 5px;
+  margin: 0 4px;
   cursor: pointer;
   font-size: 14px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #388e3c;
+  transform: scale(1.03);
 }
 
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
-}
-
-/* Formulário */
-form {
-  margin: 20px auto;
-  width: 80%;
-  max-width: 600px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-form div {
-  margin-bottom: 15px;
-}
-
-form label {
-  font-weight: bold;
-}
-
-form input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-form button {
-  width: 100%;
-  padding: 12px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-form button:hover {
-  background-color: #45a049;
-}
-
-form button:disabled {
-  background-color: #ccc;
 }
