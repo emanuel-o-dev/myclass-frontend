@@ -1,107 +1,129 @@
-/* Container principal */
-.App {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #ffffffd9;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  text-align: center;
+/* =======================
+   Reset / Base
+   ======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Logo */
-.App img {
-  margin-bottom: 20px;
-  max-height: 100px;
-}
-
-/* Título */
-h1 {
-  text-align: center;
+body {
+  background: #f5f7fa;
   color: #2c3e50;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  font-size: 2rem;
-  font-weight: 600;
+  line-height: 1.6;
 }
 
-/* Formulário */
+/* =======================
+   Container principal
+   ======================= */
+.App {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* =======================
+   Cabeçalho e Títulos
+   ======================= */
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+/* =======================
+   Formulário
+   ======================= */
 form {
-  margin: 20px auto 40px auto; /* mais espaço embaixo para separar do botão */
-  width: 100%;
-  max-width: 600px;
-  background: #fdfdfd;
+  margin: 30px auto;
+  max-width: 650px;
+  background: #fafafa;
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border: 1px solid #e0e6ed;
 }
 
 form div {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   text-align: left;
 }
 
 form label {
   font-weight: 600;
-  color: #444;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
 }
 
 form input {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccd;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: border 0.3s;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
 form input:focus {
-  border-color: #4CAF50;
+  border-color: #2ecc71;
+  box-shadow: 0 0 4px rgba(46, 204, 113, 0.4);
   outline: none;
 }
 
 /* Botão principal do form */
 form button {
-  margin-top: 15px; /* afasta o botão dos campos */
   width: 100%;
   padding: 12px;
-  background: #4CAF50;
+  background: #2ecc71;
   color: white;
   border: none;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: background 0.3s ease;
 }
 
 form button:hover {
-  background: #388e3c;
+  background: #27ae60;
 }
 
-/* Tabela */
+/* =======================
+   Tabela
+   ======================= */
 table {
   width: 100%;
-  margin: 30px auto;
   border-collapse: collapse;
-  background-color: #fff;
-  border-radius: 10px;
+  margin-top: 30px;
+  background: #fff;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
 }
 
 th, td {
   padding: 14px 18px;
   text-align: left;
-  border-bottom: 1px solid #eee;
 }
 
 th {
-  background: #4CAF50;
-  color: white;
-  text-transform: uppercase;
+  background: #2ecc71;
+  color: #fff;
   font-size: 14px;
-  letter-spacing: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 tr:nth-child(even) td {
@@ -109,28 +131,47 @@ tr:nth-child(even) td {
 }
 
 tr:hover td {
-  background: #f1f8f4;
+  background: #f1fbf5;
 }
 
-/* Botões */
+/* =======================
+   Botões Ações
+   ======================= */
 button {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #2ecc71;
+  color: #fff;
   border: none;
-  padding: 8px 12px;
-  margin: 0 4px;
+  padding: 8px 14px;
+  margin: 2px;
   cursor: pointer;
   font-size: 14px;
   border-radius: 6px;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.2s, transform 0.15s;
 }
 
 button:hover {
-  background-color: #388e3c;
-  transform: scale(1.03);
+  background-color: #27ae60;
+  transform: scale(1.05);
 }
 
 button:disabled {
-  background-color: #ccc;
+  background-color: #bbb;
   cursor: not-allowed;
+}
+
+/* Botões específicos */
+button.edit {
+  background-color: #3498db;
+}
+
+button.edit:hover {
+  background-color: #2a80b9;
+}
+
+button.delete {
+  background-color: #e74c3c;
+}
+
+button.delete:hover {
+  background-color: #c0392b;
 }
